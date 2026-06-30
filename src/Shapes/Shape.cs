@@ -5,15 +5,9 @@ namespace StudentGroupSystem.Shapes
         public string Name { get; set; }
         public string Color { get; set; }
 
-        public virtual double CalculateArea()
-        {
-            return 0;
-        }
+        public abstract double CalculateArea();
+        public abstract double CalculatePerimeter();
 
-        public virtual double CalculatePerimeter()
-        {
-            return 0;
-        }
 
         public abstract string GetDescription();
     }

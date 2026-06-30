@@ -148,8 +148,7 @@ namespace StudentGroupSystem.Menu
         {
             if (_currentStudent == null)
             {
-                Console.WriteLine("Select a student first!");
-                Console.ReadKey();
+                RequireStudent();
                 return;
             }
 
@@ -203,8 +202,7 @@ namespace StudentGroupSystem.Menu
         {
             if (_currentStudent == null)
             {
-                Console.WriteLine("Select a student first!");
-                Console.ReadKey();
+                RequireStudent();
                 return;
             }
 
@@ -215,6 +213,13 @@ namespace StudentGroupSystem.Menu
 
             Console.ReadKey();
         }
+
+        private void RequireStudent()
+        {
+            Console.WriteLine("Select a student first!");
+            Console.ReadKey();
+        }
+
 
         private void CalculateTotalArea()
         {
@@ -250,8 +255,7 @@ namespace StudentGroupSystem.Menu
         {
             if (_currentStudent == null)
             {
-                Console.WriteLine("Select a student first!");
-                Console.ReadKey();
+                RequireStudent();
                 return;
             }
 
