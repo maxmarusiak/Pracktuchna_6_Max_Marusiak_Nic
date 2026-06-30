@@ -57,5 +57,62 @@ namespace StudentGroupSystem.Models
             foreach (var m in Members)
                 Console.WriteLine(m.GetInfo());
         }
+
+         public double GetTotalAreaOfAllShapes()
+        {
+            double total = 0;
+
+            foreach (var student in Students)
+            {
+                foreach (var shape in student.Shapes)
+                {
+                    total += shape.CalculateArea();   // поліморфізм через Shape
+                }
+            }
+
+            return total;
+        }
+
+        public void DrawAllShapes()
+        {
+            foreach (var student in Students)
+            {
+                foreach (var shape in student.Shapes)
+                {
+                    if (shape is IDrawable drawable)
+                    {
+                        drawable.Draw();              // поліморфізм через інтерфейс
+                    }
+                }
+            }
+        }
+
+        public void ResizeAllShapes(double factor)
+        {
+            foreach (var student in Students)
+            {
+                foreach (var shape in student.Shapes)
+                {
+                    if (shape is IResizable resizable)
+                    {
+                        resizable.Resize(factor);     // поліморфізм через інтерфейс
+                    }
+                }
+            }
+        }
+
+        public void PrintAllShapes()
+        {
+            foreach (var student in Students)
+            {
+                foreach (var shape in student.Shapes)
+                {
+                    if (shape is IPrintable printable)
+                    {
+                        Console.WriteLine(printable.GetPrintInfo());
+                    }
+                }
+            }
+        }
     }
 }
