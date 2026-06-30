@@ -14,6 +14,23 @@ namespace StudentGroupSystem.Models
             AverageGrade = grade;
         }
 
+                public List<Shape> Shapes { get; } = new List<Shape>();
+
+        public void AddShape(Shape shape)
+        {
+            Shapes.Add(shape);
+        }
+
+        public void RemoveShape(Shape shape)
+        {
+            Shapes.Remove(shape);
+        }
+
+        public void ClearShapes()
+        {
+            Shapes.Clear();
+        }
+
         public override string ToString()
         {
             return $"{base.ToString()}, Name: {Name}, Avg: {AverageGrade}";
